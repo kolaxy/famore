@@ -1,6 +1,8 @@
 
 # ToDoList
 
+[![ToDo](https://github.com/kolaxy/famore/actions/workflows/todo.yml/badge.svg)](https://github.com/kolaxy/famore/actions/workflows/todo.yml)
+
 A FastAPI application that allows you to create, update, view and delete.
 
 ## Actions status
