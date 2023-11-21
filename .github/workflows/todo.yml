@@ -1,1 +1,26 @@
+name: Docker Build and Deploy
 
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Build Backend Docker Image
+        run: docker build -t backend:latest -f ./backend/Dockerfile .
+
+      - name: Build Frontend Docker Image
+        run: docker build -t frontend:latest -f ./frontend/Dockerfile .
+
+      - name: Start Docker Compose
+        run: docker-compose up -d
+
+      - name: Close Docker Compose
+        run : docker-compose down
