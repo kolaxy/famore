@@ -2,20 +2,15 @@ from model import Todo
 
 #mongodb driver
 import motor.motor_asyncio
-
-# MongoDB connection settings with username and password
-# MONGO_DB_URL = "mongodb://root:root@mongo:27017"
-MONGO_DB_URL = "mongodb://root:root@mongo:27017"
-DATABASE_NAME = "TodoList"
-COLLECTION_NAME = "todo"
+import os
 
 
-# Create an instance of AsyncIOMotorClient
+
+MONGO_DB_URL = os.getenv("DATABASE_URL")
+
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DB_URL)
-
-# Reference to the 'TodoList' database and 'todo' collection
-database = client[DATABASE_NAME]
-collection = database[COLLECTION_NAME]
+database = client.TodoList
+collection = database.todo
 
 async def fetch_one_todo(title):
     document = await collection.find_one({"title": title})
