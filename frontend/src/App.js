@@ -15,7 +15,7 @@ function App() {
 
   // Read all todos
   useEffect(() => {
-    axios.get('http://localhost:8000/api/todo')
+    axios.get('http://localhost:80/api/todo')
       .then(res => {
         setTodoList(res.data)
       })
@@ -23,7 +23,7 @@ function App() {
 
   // Post a todo
   const addTodoHandler = () => {
-    axios.post('http://localhost:8000/api/todo/', { 'title': title, 'description': desc })
+    axios.post('http://localhost:80/api/todo/', { 'title': title, 'description': desc })
       .then(res => console.log(res))
 };
 

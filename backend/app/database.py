@@ -4,9 +4,11 @@ from model import Todo
 import motor.motor_asyncio
 
 # MongoDB connection settings with username and password
-MONGO_DB_URL = "mongodb://root:root@localhost:27017"
+# MONGO_DB_URL = "mongodb://root:root@mongo:27017"
+MONGO_DB_URL = "mongodb://root:root@mongo:27017"
 DATABASE_NAME = "TodoList"
 COLLECTION_NAME = "todo"
+
 
 # Create an instance of AsyncIOMotorClient
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DB_URL)
