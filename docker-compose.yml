@@ -25,7 +25,7 @@ services:
     networks:
       - famnet
   mongo:
-    image: "mongo:latest"
+    image: "mongo:7.0.3"
     env_file:
       - ./.env
     environment:
