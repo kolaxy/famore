@@ -1,4 +1,3 @@
-![Alt text](<ui.png>)
 
 # ToDoList
 
@@ -17,3 +16,5 @@ In processing
 - React 18.2.0
 - MongoDB 7.0.3
 
+
+![Alt text](<ui.png>)
